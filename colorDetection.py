@@ -34,7 +34,7 @@ upper_silver = np.array([179, 30, 255])  # Light color range
 video_path = "/Users/ashwinrao/konglabimagedetection/konglabimagedetection/E652 - 20241202_181754.wmv"  # Replace with the path to your video file
 
 # Open the video file
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(video_path)
 
 if not cap.isOpened():
     print("Error: Could not open video file.")
@@ -50,11 +50,11 @@ while True:
     # Crop the frame (e.g., retain only the center region)
     height, width, _ = frame.shape
   # Define crop ranges for left 2/3 horizontally and middle 1/3 vertically
-   # vertical_start, vertical_end = (7*height)//21, (8*height)//20
-   # horizontal_start, horizontal_end = 0, (2 * width) // 3
+    vertical_start, vertical_end = (7*height)//21, (8*height)//20
+    horizontal_start, horizontal_end = 0, (2 * width) // 3
 
-    vertical_start, vertical_end = 0, height
-    horizontal_start, horizontal_end = 0, width
+   # vertical_start, vertical_end = 0, height
+   # horizontal_start, horizontal_end = 0, width
 
     # Crop the frame
     cropped_frame = frame[vertical_start:vertical_end, horizontal_start:horizontal_end]
