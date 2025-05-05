@@ -66,8 +66,8 @@ while True:
     horizontal_start, horizontal_end = 0, (2 * width) // 3
     
     # Crop the frame
-    #cropped_frame = frame[vertical_start:vertical_end, horizontal_start:horizontal_end]
-    cropped_frame = frame
+    cropped_frame = frame[vertical_start:vertical_end, horizontal_start:horizontal_end]
+    #cropped_frame = frame
     # Detect color objects and get the mask
     result_frame, mask = detect_color(cropped_frame, lower_silver1, upper_silver1, lower_silver2, upper_silver2)
     # Apply mask to the frame
